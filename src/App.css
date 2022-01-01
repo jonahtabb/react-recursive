@@ -3,7 +3,7 @@
 :root {
   --blob-size-start: 85%;
   --blob-scale-base: 1;
-  --blob-scale-mid: 1.15;
+  --blob-scale-mid: 1.1;
   --grow-time: 20s;
 }
 

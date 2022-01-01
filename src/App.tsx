@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useRef} from 'react';
 import './App.css';
+import Base from './Components/Base';
 
 function App() {
+  const counter = useRef(1)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Wishing you an awesome New Year.</h1>
+      <Base parentCounter={counter.current}/>
+      <h2>This responsive and recursive new years card was made in React by <a href="https://jtabbdev.com/">Jonah Tabb</a></h2>
     </div>
   );
 }

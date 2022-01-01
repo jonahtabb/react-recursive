@@ -1,10 +1,18 @@
+/* This code pen was an inspiration for this this project: https://codepen.io/karisabinemalmin/pen/exjeym */
+
+:root {
+  --blob-size-start: 85%;
+  --blob-scale-base: 1;
+  --blob-scale-mid: 1.15;
+  --grow-time: 20s;
+}
 
 h1,h2{
   font-family: 'Fjalla One', sans-serif;
   
   color:  hsl(224, 64%, 47%);
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 h1 {
@@ -43,13 +51,13 @@ a:hover{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 93%;
-  height: 93%;
+  width: var(--blob-size-start);
+  height: var(--blob-size-start);
   border: 2px solid hsl(224, 64%, 47%);
   max-width: 100%;
-  -webkit-animation: boxGrow 30s ease-in-out infinite, blob-morph 15s linear infinite;
-  -moz-animation: boxGrow 30s ease-in-out infinite, blob-morph 15s linear infinite;
-  animation: boxGrow 30s ease-in-out infinite,blob-morph 15s linear infinite;
+  -webkit-animation: boxGrow var(--grow-time) ease-in-out infinite, blob-morph 15s linear infinite;
+  -moz-animation: boxGrow var(--grow-time) ease-in-out infinite, blob-morph 15s linear infinite;
+  animation: boxGrow var(--grow-time) ease-in-out infinite,blob-morph 15s linear infinite;
 }
 
 .centerBox {
@@ -67,7 +75,7 @@ a:hover{
   -moz-animation: gradientMove 10s ease infinite, blob-morph 15s linear infinite;
   animation: gradientMove 10s ease infinite, blob-morph 15s linear infinite;
   font-size: .5rem;
-  box-shadow: 0 0 3px 3px hsl(224, 64%, 47%);
+  box-shadow: 0 0 0 3px hsl(224, 64%, 47%);
 }
 
 @keyframes blob-morph{
@@ -83,19 +91,19 @@ a:hover{
 }
  
 @keyframes boxGrow {
-  0% {transform: scale(1.0);}
-  50% {transform: scale(1.06);}
-  100% {transform: scale(1.0);}
+  0% {transform: scale(var(--blob-scale-base));}
+  50% {transform: scale(var(--blob-scale-mid));}
+  100% {transform: scale(var(--blob-scale-base));}
 }
 @-webkit-keyframes boxGrow {
-  0% {transform: scale(1.0);}
-  50% {transform: scale(1.06);}
-  100% {transform: scale(1.0);}
+  0% {transform: scale(var(--blob-scale-base));}
+  50% {transform: scale(var(--blob-scale-mid));}
+  100% {transform: scale(var(--blob-scale-base));}
 }
 @-moz-keyframes boxGrow {
-  0% {transform: scale(1.0);}
-  50% {transform: scale(1.06);}
-  100% {transform: scale(1.0);}
+  0% {transform: scale(var(--blob-scale-base));}
+  50% {transform: scale(var(--blob-scale-mid));}
+  100% {transform: scale(var(--blob-scale-base));}
 }
 
 

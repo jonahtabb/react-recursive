@@ -10,8 +10,8 @@ export default function Base({parentCounter}: BaseProps): JSX.Element{
 
   return (
   <div className='box'>
-    {counter.current < 40 ? <Base parentCounter={counter.current} /> : <></>}
-    {counter.current === 40 ? <div className='centerBox'>🥳</div>: <></>}
+    {counter.current < 35 ? <Base parentCounter={counter.current} /> : <></>}
+    {counter.current === 35 ? <div className='centerBox '>🥳</div>: <></>}
   </div>)
 
 }

@@ -45,12 +45,11 @@ a:hover{
   align-items: center;
   width: 93%;
   height: 93%;
-  border: 2px dashed hsl(224, 64%, 47%);
+  border: 2px solid hsl(224, 64%, 47%);
   max-width: 100%;
-  -webkit-animation: boxGrow 30s ease-in-out infinite;
-  -moz-animation: boxGrow 30s ease-in-out infinite;
-  animation: boxGrow 30s ease-in-out infinite;
-  border-radius: 10%;
+  -webkit-animation: boxGrow 30s ease-in-out infinite, blob-morph 15s linear infinite;
+  -moz-animation: boxGrow 30s ease-in-out infinite, blob-morph 15s linear infinite;
+  animation: boxGrow 30s ease-in-out infinite,blob-morph 15s linear infinite;
 }
 
 .centerBox {
@@ -62,12 +61,25 @@ a:hover{
   width: 100%;
   background-color: hsl(272, 64%, 53%);
   background-image: linear-gradient(225deg, #FF3CAC 0%, hsl(224, 64%, 47%) 50%, hsl(272, 64%, 53%) 80%);
-  background-size: 400px 400px;
-  -webkit-animation: gradientMove 10s ease infinite;
-  -moz-animation: gradientMove 10s ease infinite;
-  animation: gradientMove 10s ease infinite;
-  border-radius: 10%;
+  background-size: 200% 200%;
+  overflow: hidden;
+  -webkit-animation: gradientMove 10s ease infinite, blob-morph 15s linear infinite;
+  -moz-animation: gradientMove 10s ease infinite, blob-morph 15s linear infinite;
+  animation: gradientMove 10s ease infinite, blob-morph 15s linear infinite;
   font-size: .5rem;
+  box-shadow: 0 0 3px 3px hsl(224, 64%, 47%);
+}
+
+@keyframes blob-morph{
+  0%, 100% {
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
 }
 
 @keyframes boxGrow {
@@ -90,17 +102,17 @@ a:hover{
 
 @keyframes gradientMove { 
   0%{background-position:10% 0%}
-  50%{background-position:80% 100%}
+  50%{background-position:90% 100%}
   100%{background-position:10% 0%}
 }
 @-webkit-keyframes gradientMove { 
   0%{background-position:10% 0%}
-  50%{background-position:80% 100%}
+  50%{background-position:90% 100%}
   100%{background-position:10% 0%}
 }
 @-moz-keyframes gradientMove { 
   0%{background-position:10% 0%}
-  50%{background-position:80% 100%}
+  50%{background-position:90% 100%}
   100%{background-position:10% 0%}
 }
 
